@@ -1,0 +1,48 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+jar {
+	version = '1.0'
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version
+    }
+}
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+	junitVersion				= '5.12'
+	testngVersion				= '6.11'
+	
+	libraries = [
+		junit:							"junit:junit:${junitVersion}",
+		testNG:							"org.testng:testng:${testngVersion}"
+	]
+}
+
+dependencies {
+    testCompile(libraries.testNG)
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
