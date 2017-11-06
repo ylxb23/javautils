@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.zero.sama.utils;
+package com.zero.sama.utils.dep;
 
 import java.io.IOException;
 import java.io.InputStream;

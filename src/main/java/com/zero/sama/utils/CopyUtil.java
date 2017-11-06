@@ -7,6 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import com.zero.sama.utils.dep.FastByteArrayOutputStream;
+
 /**
  * 对象克隆工具
  * @date 2017年11月6日 上午10:44:35
