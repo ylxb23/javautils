@@ -14,8 +14,8 @@ public abstract class SortUtil {
 	 * @param arr
 	 */
 	public static <T extends Comparable<T>> void bubbleSort(T[] arr) {
-		int len = arr.length;
-		if(arr == null || len < 2) {
+		int len;
+		if(arr == null || (len=arr.length) < 2) {
 			return;
 		}
 		for(int i=0; i<len; i++) {
@@ -55,8 +55,8 @@ public abstract class SortUtil {
 	 * @param arr
 	 */
 	public static <T extends Comparable<T>> void insertSort(T[] arr) {
-		int len = arr.length;
-		if(arr == null || len < 2) {
+		int len;
+		if(arr == null || (len=arr.length) < 2) {
 			return;
 		}
 		for(int i=1; i<len; i++) {
@@ -92,10 +92,11 @@ public abstract class SortUtil {
 	 * @param arr
 	 */
 	public static <T> void display(T[] arr) {
-		if(arr == null || arr.length < 1) {
+		int len;
+		if(arr == null || (len=arr.length) < 1) {
 			return;
 		}
-		for(int i=0; i<arr.length; i++) {
+		for(int i=0; i<len; i++) {
 			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
