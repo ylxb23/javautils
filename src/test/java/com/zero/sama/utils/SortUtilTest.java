@@ -62,4 +62,18 @@ public class SortUtilTest {
 		System.out.printf("insert sort %d times spend %d ms. \n", times, (end - start));
 	}
 	
+	@Test
+	public void testHeapSort() {
+		int times = 100;
+		Integer[] arr = {3,2,4,1,6,9,5,8,7,0};
+		SortUtil.display(arr);
+		long start = System.currentTimeMillis();
+		for(int i=0; i<=times; i++) {
+			SortUtil.heapSort(arr);
+		}
+		long end = System.currentTimeMillis();
+		SortUtil.display(arr);
+		Assert.assertEquals(arr, new Integer[] {0,1,2,3,4,5,6,7,8,9});
+		System.out.printf("heap sort %d times spend %d ms. \n", times, (end - start));
+	}
 }
